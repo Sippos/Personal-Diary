@@ -1,10 +1,19 @@
+import { useState } from "react"
+import Header from "./components/Header"
+import DiaryList from "./components/DiaryList"
+import sampleEntries from "./components/data/sampleEntries"
+
+
 function App() {
+  const [entries, setEntries] = useState(sampleEntries)
+  const [selectedEntry, setSelectedEntry] = useState(null)
+  const [isFormOpen, setIsFormOpen] = useState(false)
+
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gray-100">
-      <h1 className="text-4xl font-bold text-blue-600">
-        React + Vite + Tailwind is working
-      </h1>
-    </main>
+    <>
+    <Header />
+    <DiaryList entries={entries} />
+    </>
   )
 }
 
