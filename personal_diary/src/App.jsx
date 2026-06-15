@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"
 import Header from "./components/Header"
 import DiaryList from "./components/DiaryList"
-import EntryForm from "./components/AddEntryModal"
 import ViewEntryModal from "./components/ViewEntryModal"
 import AddEntryModal from "./components/AddEntryModal"
 
@@ -68,11 +67,6 @@ function App() {
     onSelectEntry={setSelectedEntry}
     />
     </main>
-
-    {isFormOpen && (
-      <EntryForm onClose={() => setIsFormOpen(false)} 
-      onAddEntry={handleAddEntry}/>
-    )}
 
   {selectedEntry && (
     <ViewEntryModal
