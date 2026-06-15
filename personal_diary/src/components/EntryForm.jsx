@@ -24,7 +24,13 @@ function EntryForm ({onClose, onAddEntry}) {
             image: image,
             content: content,
         }
-        onAddEntry(newEntry)
+        const result = onAddEntry(newEntry)
+
+        if (!result.success) {
+            setError(result.message)
+            return
+        }
+        setError("")
     }
 
     return (

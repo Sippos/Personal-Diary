@@ -1,6 +1,8 @@
-function DiaryCard ({entry}) {
+function DiaryCard ({entry, onSelectEntry, onDeleteEntry}) {
     return (
-        <article className="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-lg">
+        <article
+        onClick={() => onSelectEntry(entry)}
+        className="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-lg">
             <img src={entry.image} alt={entry.title} className="h-48 w-full object-cover"/>
 
         <div className="p-4">
