@@ -7,9 +7,11 @@ function DiaryList({entries, onSelectEntry, onDeleteEntry}) {
         )
     }
 
+    const sortedEntries = [...entries].sort((a, b) => new Date(b.date) - new Date(a.date))
+
     return (
         <section className="grid gap-6 p-6 sm:grid-cols-2 lg:grid-cols-3">
-            {entries.map((entry) => (
+            {sortedEntries.map((entry) => (
                 <DiaryCard
                 key={entry.id}
                 entry={entry}
