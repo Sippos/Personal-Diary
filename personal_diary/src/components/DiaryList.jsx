@@ -1,6 +1,6 @@
 import DiaryCard from "./DiaryCard";
 
-function DiaryList({entries, onSelectEntry, onDeleteEntry}) {
+function DiaryList({entries, onSelectEntry}) {
     if (entries.length === 0) {
         return (
             <p className="rounded-xl bg-white p-6 text-slate-600 shadow-sm">No diary entries yet. Add your first entry.</p>
@@ -16,7 +16,6 @@ function DiaryList({entries, onSelectEntry, onDeleteEntry}) {
                 key={entry.id}
                 entry={entry}
                 onSelectEntry={onSelectEntry}
-                onDeleteEntry={onDeleteEntry}
                 />
             ))}
         </section>

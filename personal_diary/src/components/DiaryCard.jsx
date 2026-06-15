@@ -1,4 +1,4 @@
-function DiaryCard ({entry, onSelectEntry, onDeleteEntry}) {
+function DiaryCard ({entry, onSelectEntry}) {
     return (
         <article
         onClick={() => onSelectEntry(entry)}
